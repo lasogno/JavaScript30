@@ -9,10 +9,11 @@ const playSound = (e) => {
 }
 const keys = document.querySelectorAll('.key');
 window.addEventListener('keydown', playSound)
-keys.forEach((key) => key.addEventListener('touchstart', (e) => {
+
+keys.forEach((tap) => tap.addEventListener('touchstart', (e) => {
     e.preventDefault();
-    const audio = document.querySelector(`audio[data-key="${key.dataset.key}"]`);
-    const key = document.querySelector(`div[data-key="${key.dataset.key}"]`);
+    const audio = document.querySelector(`audio[data-key="${e.currentTarget.dataset.key}"]`);
+    const key = document.querySelector(`div[data-key="${e.currentTarget.dataset.key}"]`);
     if (!audio) return;
 
     key.classList.add('playing');
