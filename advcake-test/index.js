@@ -12,21 +12,17 @@ const revert = (word) => {
             const temp = word[i].toLowerCase();
             word[i] = word[j].toUpperCase();
             word[j] = temp;
-            i += 1;
-            j -= 1;
           } else if (word[j] === word[j].toUpperCase()) {
             const temp = word[i];
             word[i] = word[j].toLowerCase();
             word[j] = temp.toUpperCase();
-            i += 1;
-            j -= 1;
           } else {
             const temp = word[i];
             word[i] = word[j];
             word[j] = temp;
+          }
             i += 1;
             j -= 1;
-          }
         }
       }
       return word;
